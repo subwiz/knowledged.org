@@ -468,6 +468,7 @@ h1 {
 .api-verb.get  { background: #7aa2ff; }
 .api-verb.post { background: #5dd0a7; }
 .api-verb.put  { background: #f0b95c; }
+.api-verb.del  { background: #f06a6a; }
 
 /* ─────────── CTA + Footer ─────────── */
 .cta-section { padding: 56px 0; }

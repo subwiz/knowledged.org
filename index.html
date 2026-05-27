@@ -378,7 +378,12 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
           <div class="api-row">
             <div class="api-verb put">PUT</div>
             <code>/content</code>
-            <p>Replace an existing document body, title, or description by path.</p>
+            <p>Replace an existing document's body, title, description, or tags by path.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb del">DELETE</div>
+            <code>/content</code>
+            <p>Remove a stored document by path; commit is atomic.</p>
           </div>
           <div class="api-row">
             <div class="api-verb get">GET</div>
@@ -389,6 +394,11 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
             <div class="api-verb get">GET</div>
             <code>/jobs/{id}</code>
             <p>Poll job status: <code>queued</code> · <code>processing</code> · <code>done</code> · <code>failed</code>.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb get">GET</div>
+            <code>/posts/recents</code>
+            <p>Up to 20 most recent posts with tags hydrated from frontmatter.</p>
           </div>
           <div class="api-row">
             <div class="api-verb get">GET</div>
