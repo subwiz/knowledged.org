@@ -285,12 +285,13 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
         <h2 class="section-title">Architecture</h2>
         <p class="section-sub">A single Go binary fronts an HTTP API. Writes funnel through one worker goroutine; reads hit the filesystem directly. Git is the durable store.</p>
 
-        <pre class="diagram" aria-hidden="true"><code>┌────────────────────────────────────────────────────────────┐
-│                       HTTP Server                          │
-│   POST /content   GET /content   GET /jobs/{id}            │
-└──────────┬──────────────────────────┬──────────────────────┘
-           │ write                    │ read (concurrent ok)
-           ▼                          ▼
+        <pre class="diagram" aria-hidden="true"><code>┌─────────────────────────────────────────────────────────────────┐
+│                          HTTP Server                            │
+│   POST /content   GET /content   GET /search   GET /answer      │
+│   GET /tags       GET /jobs/{id}                                │
+└──────────┬───────────────────────────────┬──────────────────────┘
+           │ write                         │ read (concurrent ok)
+           ▼                               ▼
 ┌────────────────────┐     ┌──────────────────────────────┐
 │   Queue Worker     │     │       Query Engine           │
 │   (1 goroutine)    │     │  LLM: which docs match?      │
@@ -322,12 +323,12 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
           </article>
 
           <article class="arch-card">
-            <h3>Read path</h3>
+            <h3>Read paths</h3>
             <ul>
-              <li><code>?path=…</code> — direct file read, no LLM.</li>
-              <li><code>?query=…&amp;mode=raw</code> — LLM picks ≤5 relevant paths from <code>INDEX.md</code>, server reads them.</li>
-              <li><code>?query=…</code> — same relevance call, then a synthesis call that answers from those files only.</li>
-              <li><code>?tag=…</code> / <code>?tags=a,b&amp;match=all</code> — derived from a cached tag index rebuilt from frontmatter on staleness.</li>
+              <li><code>GET /content?path=…</code> — direct file read, no LLM.</li>
+              <li><code>GET /search?query=…</code> — LLM picks ≤5 relevant paths from <code>INDEX.md</code>, server reads them; returns raw documents.</li>
+              <li><code>GET /search?tag=…</code> / <code>?tags=a,b&amp;match=all</code> — derived from a cached tag index rebuilt from frontmatter on staleness; metadata by default, bodies with <code>&amp;mode=raw</code>.</li>
+              <li><code>GET /answer?query=…</code> — same relevance call as <code>/search</code>, then a synthesis call that answers from those files only.</li>
             </ul>
           </article>
 
@@ -387,8 +388,18 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
           </div>
           <div class="api-row">
             <div class="api-verb get">GET</div>
-            <code>/content?path=… | query=… | tag=…</code>
-            <p>Read by path, query (raw or synthesized), or tag.</p>
+            <code>/content?path=…</code>
+            <p>Fetch a single document by repo-relative path.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb get">GET</div>
+            <code>/search?query=… | tag=…</code>
+            <p>LLM-ranked retrieval by query, or tag-index lookup. Always returns an array.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb get">GET</div>
+            <code>/answer?query=…</code>
+            <p>LLM-synthesized answer with cited sources, drawn from the most relevant documents.</p>
           </div>
           <div class="api-row">
             <div class="api-verb get">GET</div>
