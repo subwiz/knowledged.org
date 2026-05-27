@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>knowledged — a self-organizing, Git-backed knowledge base</title>
+  <meta name="description" content="knowledged is a self-organizing, Git-backed knowledge base with an HTTP interface and LLM-powered storage and retrieval. knowledged-mac is its native macOS client." />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta property="og:title" content="knowledged" />
+  <meta property="og:description" content="Self-organizing, Git-backed knowledge base. Write notes in, query them back as raw Markdown or synthesized answers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://knowledged.org/" />
+  <meta property="og:image" content="https://knowledged.org/images/km3.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" as="image" href="images/km0.jpg" />
+  <link rel="preload" as="image" href="images/km1.jpg" />
+  <link rel="preload" as="image" href="images/km2.jpg" />
+  <link rel="preload" as="image" href="images/km3.jpg" />
+  <link rel="preload" as="image" href="images/km4.jpg" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="knowledged home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#7aa2ff"/>
+              <stop offset="1" stop-color="#a07bff"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="28" height="28" rx="7" fill="url(#g)"/>
+          <path d="M9 22 V10 h2.4 v5.2 L16 10 h3 l-5.2 5.6 L19.4 22 h-3 L12.6 17 l-1.2 1.3 V22 Z" fill="#0b0d10"/>
+        </svg>
+        <span>knowledged</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#demo">Mac app</a>
+        <a href="#install">Install</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#api">API</a>
+        <a class="ghost" href="https://github.com/wiztools/knowledged" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="dot"></span> open source · Go · SwiftUI
+          </div>
+          <h1>
+            A self-organizing,<br/>
+            <span class="grad">Git-backed</span> knowledge base.
+          </h1>
+          <p class="lede">
+            Write notes in; an LLM decides where they belong, keeps the folder
+            structure tidy, and commits everything to Git. Query content back as
+            raw Markdown or synthesized answers — from the CLI, HTTP, or a
+            native macOS app.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#install">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 1v9.6l3.3-3.3 1.4 1.4L8 13.4 3.3 8.7l1.4-1.4L8 10.6V1zM2 14h12v2H2z"/></svg>
+              Get started
+            </a>
+            <a class="btn" href="https://github.com/wiztools/knowledged" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 .2a8 8 0 0 0-2.5 15.6c.4.1.6-.2.6-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.8-.5.1-.5.1-.5.8.1 1.3.9 1.3.9.8 1.3 2 .9 2.5.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.5 1 .2 1.8.1 2 .5.6.8 1.3.8 2.2 0 3.1-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.2.5.6.4A8 8 0 0 0 8 .2z"/></svg>
+              knowledged
+            </a>
+            <a class="btn" href="https://github.com/wiztools/knowledged-mac" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M11.2 1.6c.1.9-.3 1.7-.8 2.3-.6.6-1.4 1.1-2.3 1-.1-.9.3-1.7.8-2.3.6-.6 1.5-1 2.3-1zM13.6 11c-.4 1-.6 1.4-1.2 2.2-.8 1.2-1.9 2.7-3.3 2.7-1.2 0-1.6-.8-3.2-.8-1.6 0-2 .8-3.2.8-1.4 0-2.5-1.4-3.3-2.6-2.1-3.2-2.4-7 -.9-9 1-1.5 2.5-2.4 4-2.4 1.4 0 2.3.8 3.4.8 1.1 0 1.7-.8 3.3-.8 1.3 0 2.6.7 3.6 2-3.2 1.7-2.7 6.2-.2 7.1z"/></svg>
+              knowledged-mac
+            </a>
+          </div>
+          <ul class="hero-meta">
+            <li><kbd>Go 1.22+</kbd></li>
+            <li><kbd>macOS 14+</kbd></li>
+            <li><kbd>Ollama · Anthropic · OpenAI · Jan</kbd></li>
+          </ul>
+        </div>
+
+        <div class="hero-term" aria-hidden="true">
+          <div class="term-chrome">
+            <span></span><span></span><span></span>
+            <em>~/knowledge-repo</em>
+          </div>
+          <pre class="term-body"><code><span class="p">$</span> <span class="c">kc post</span> --content <span class="s">"Go uses goroutines for concurrency."</span> --hint golang
+job_id : <span class="k">3f2e1a4b…</span>
+status : queued
+
+<span class="p">$</span> <span class="c">kc job</span> --id 3f2e1a4b
+status : done
+path   : <span class="k">tech/go/goroutines.md</span>
+
+<span class="p">$</span> <span class="c">git log</span> --oneline -1
+<span class="k">b1a9c2</span> store(3f2e1a4b): tech/go/goroutines.md
+
+<span class="p">$</span> <span class="c">kc get</span> --query <span class="s">"how does Go handle concurrency?"</span>
+<span class="dim">→ tech/go/goroutines.md</span>
+Goroutines are lightweight, runtime-scheduled threads…</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Why knowledged</h2>
+        <p class="section-sub">A small set of strong defaults that turn a folder of notes into a queryable, audit-friendly knowledge base.</p>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="ficon">📂</div>
+            <h3>LLM picks the path</h3>
+            <p>On every write, the model reads <code>INDEX.md</code>, decides where the note belongs, and refactors the tree if it has drifted. You stop foldering by hand.</p>
+          </article>
+          <article class="feature">
+            <div class="ficon">🌿</div>
+            <h3>Git is the source of truth</h3>
+            <p>Every write is one atomic commit with the job ID in the message. Crash recovery scans the log — jobs never run twice.</p>
+          </article>
+          <article class="feature">
+            <div class="ficon">🔎</div>
+            <h3>Raw or synthesized retrieval</h3>
+            <p>Query by natural language and get an answer with sources cited, or pull the raw Markdown back. By file path, query, or tag.</p>
+          </article>
+          <article class="feature">
+            <div class="ficon">🔌</div>
+            <h3>Pluggable providers</h3>
+            <p>Ollama, Anthropic, OpenAI (incl. Azure / OpenAI-compatible gateways), and Jan — one <code>llm.Provider</code> interface, four backends, zero lock-in.</p>
+          </article>
+          <article class="feature">
+            <div class="ficon">🧰</div>
+            <h3>Three surfaces</h3>
+            <p>HTTP server, <code>kc</code> CLI, and a native SwiftUI macOS app. Pick the one that fits the moment — they all talk to the same backend.</p>
+          </article>
+          <article class="feature">
+            <div class="ficon">🪶</div>
+            <h3>Small, boring core</h3>
+            <p>A single Go binary, a JSON queue file, and go-git. No database to babysit, no vector store to tune.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">The Mac app</h2>
+        <p class="section-sub"><a href="https://github.com/wiztools/knowledged-mac" target="_blank" rel="noopener">knowledged-mac</a> is a native SwiftUI client. Post, retrieve, browse tags, edit, and replay recents — all without leaving the window.</p>
+
+        <div class="demo">
+          <div class="demo-stage" id="demoStage" role="img" aria-label="Cycling screenshots of the Mac app">
+            <img src="images/km0.jpg" alt="Post tab" data-i="0" class="active" />
+            <img src="images/km1.jpg" alt="Retrieve by file path" data-i="1" />
+            <img src="images/km2.jpg" alt="Synthesized query answer" data-i="2" />
+            <img src="images/km3.jpg" alt="Tag browser" data-i="3" />
+            <img src="images/km4.jpg" alt="Recent posts" data-i="4" />
+            <div class="demo-progress"><div class="demo-progress-bar" id="demoBar"></div></div>
+          </div>
+
+          <ol class="demo-list" id="demoList">
+            <li data-i="0" class="active">
+              <span class="step">01</span>
+              <div>
+                <h4>Post</h4>
+                <p>Paste content, add an optional hint and tags, hit <kbd>⌘⏎</kbd>. The organizer handles the rest.</p>
+              </div>
+            </li>
+            <li data-i="1">
+              <span class="step">02</span>
+              <div>
+                <h4>Retrieve by path</h4>
+                <p>Pull any stored file back with frontmatter, tag chips, and inline rendering.</p>
+              </div>
+            </li>
+            <li data-i="2">
+              <span class="step">03</span>
+              <div>
+                <h4>Synthesize answers</h4>
+                <p>Ask a question in plain English; the model drafts an answer and cites the source files it used.</p>
+              </div>
+            </li>
+            <li data-i="3">
+              <span class="step">04</span>
+              <div>
+                <h4>Browse tags</h4>
+                <p>Tags are derived from frontmatter and cached. Click a tag to see every note that carries it.</p>
+              </div>
+            </li>
+            <li data-i="4">
+              <span class="step">05</span>
+              <div>
+                <h4>Recents</h4>
+                <p>Twenty most recent posts, one click away from re-opening, editing, or jumping to a tag.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="section">
+      <div class="container">
+        <h2 class="section-title">Install</h2>
+        <p class="section-sub">Two steps: run the backend, then talk to it from <code>kc</code>, HTTP, or the Mac app.</p>
+
+        <h3 class="step-h">1. Build the server and CLI</h3>
+        <pre class="code"><code><span class="c">git clone</span> https://github.com/wiztools/knowledged.git
+<span class="c">cd</span> knowledged
+<span class="c">go build</span> -o knowledged ./cmd/knowledged
+<span class="c">go build</span> -o kc          ./cmd/kc</code></pre>
+
+        <h3 class="step-h">2. Start the server with the LLM provider you have</h3>
+        <div class="tabs" role="tablist" aria-label="LLM provider">
+          <button role="tab" aria-selected="true" data-tab="ollama">Ollama (local)</button>
+          <button role="tab" aria-selected="false" data-tab="anthropic">Anthropic</button>
+          <button role="tab" aria-selected="false" data-tab="openai">OpenAI</button>
+          <button role="tab" aria-selected="false" data-tab="jan">Jan</button>
+        </div>
+
+        <div class="tabpanels">
+          <pre class="code" data-panel="ollama"><code><span class="c">ollama pull</span> mistral-small3.1
+
+./knowledged \
+  --repo         /path/to/knowledge-repo \
+  --llm-provider ollama \
+  --model        mistral-small3.1 \
+  --port         9090</code></pre>
+
+          <pre class="code" data-panel="anthropic" hidden><code><span class="c">export</span> ANTHROPIC_API_KEY=sk-ant-...
+
+./knowledged \
+  --repo         /path/to/knowledge-repo \
+  --llm-provider anthropic \
+  --model        claude-sonnet-4-6 \
+  --port         9090</code></pre>
+
+          <pre class="code" data-panel="openai" hidden><code><span class="c">export</span> OPENAI_API_KEY=sk-...
+
+./knowledged \
+  --repo         /path/to/knowledge-repo \
+  --llm-provider openai \
+  --model        gpt-5.5 \
+  --port         9090
+
+<span class="dim"># Azure / OpenAI-compatible gateway:</span>
+./knowledged --llm-provider openai --openai-url https://your-gateway/v1 …</code></pre>
+
+          <pre class="code" data-panel="jan" hidden><code>./knowledged \
+  --repo         /path/to/knowledge-repo \
+  --llm-provider jan \
+  --jan-url      http://localhost:8080 \
+  --port         9090</code></pre>
+        </div>
+
+        <h3 class="step-h">3. Use it</h3>
+        <div class="two-col">
+          <div>
+            <h4>From the CLI</h4>
+            <pre class="code"><code><span class="c">kc post</span> --content <span class="s">"Goroutines are…"</span> --hint golang
+<span class="c">kc get</span>  --query   <span class="s">"how does Go handle concurrency?"</span>
+<span class="c">kc get</span>  --path    tech/go/goroutines.md
+<span class="c">kc tags</span>
+<span class="c">kc ask</span>  --question <span class="s">"what is RAII?"</span></code></pre>
+          </div>
+          <div>
+            <h4>From the Mac app</h4>
+            <pre class="code"><code><span class="c">git clone</span> https://github.com/wiztools/knowledged-mac.git
+<span class="c">cd</span> knowledged-mac
+./bld.sh   <span class="dim"># builds Release and copies to /Applications</span></code></pre>
+            <p class="aside">Open <strong>Settings</strong> (<kbd>⌘,</kbd>), point at <code>http://localhost:9090</code>, click <em>Test</em>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Architecture</h2>
+        <p class="section-sub">A single Go binary fronts an HTTP API. Writes funnel through one worker goroutine; reads hit the filesystem directly. Git is the durable store.</p>
+
+        <pre class="diagram" aria-hidden="true"><code>┌────────────────────────────────────────────────────────────┐
+│                       HTTP Server                          │
+│   POST /content   GET /content   GET /jobs/{id}            │
+└──────────┬──────────────────────────┬──────────────────────┘
+           │ write                    │ read (concurrent ok)
+           ▼                          ▼
+┌────────────────────┐     ┌──────────────────────────────┐
+│   Queue Worker     │     │       Query Engine           │
+│   (1 goroutine)    │     │  LLM: which docs match?      │
+│   serializes all   │     │  read files                  │
+│   git writes       │     │  LLM: synthesize answer      │
+└──────────┬─────────┘     └──────────────────────────────┘
+           ▼
+┌──────────────────────────────────────────────────────────┐
+│                       Organizer                          │
+│  read INDEX.md → LLM target_path + refactors + index     │
+│  apply moves → write file → write INDEX.md               │
+└──────────┬───────────────────────────────────────────────┘
+           ▼
+┌──────────────────────────────────────────────────────────┐
+│                    Store (go-git)                        │
+│  WriteFile · MoveFile · Commit                           │
+│  "store(&lt;jobID&gt;): &lt;target_path&gt;"                         │
+└──────────────────────────────────────────────────────────┘</code></pre>
+
+        <div class="arch-grid">
+          <article class="arch-card">
+            <h3>Write path</h3>
+            <ol>
+              <li><code>POST /content</code> validates, appends a job to <code>.knowledged/queue.json</code> (atomic rename), returns <code>202</code>.</li>
+              <li>The single worker picks the oldest <code>queued</code> job and flips it to <code>processing</code> on disk before any work begins.</li>
+              <li>Organizer calls the LLM with <code>INDEX.md</code> + content, parses a strict-JSON decision, applies refactors, writes the file and updated index.</li>
+              <li>Store makes one atomic git commit: <code>store(&lt;jobID&gt;): path</code>.</li>
+            </ol>
+          </article>
+
+          <article class="arch-card">
+            <h3>Read path</h3>
+            <ul>
+              <li><code>?path=…</code> — direct file read, no LLM.</li>
+              <li><code>?query=…&amp;mode=raw</code> — LLM picks ≤5 relevant paths from <code>INDEX.md</code>, server reads them.</li>
+              <li><code>?query=…</code> — same relevance call, then a synthesis call that answers from those files only.</li>
+              <li><code>?tag=…</code> / <code>?tags=a,b&amp;match=all</code> — derived from a cached tag index rebuilt from frontmatter on staleness.</li>
+            </ul>
+          </article>
+
+          <article class="arch-card">
+            <h3>Crash recovery</h3>
+            <p>On startup the queue scans <code>queue.json</code>. <code>processing</code> jobs are resolved against <code>git log</code>: if a commit contains the job ID, the job is marked <code>done</code>; otherwise it is reset to <code>queued</code> and retried. Commits are atomic — exact-once semantics fall out of git.</p>
+          </article>
+
+          <article class="arch-card">
+            <h3>Repository layout</h3>
+<pre class="mini"><code>&lt;repo&gt;/
+├── .gitignore         <span class="dim"># ignores /.knowledged/</span>
+├── .knowledged/
+│   ├── queue.json     <span class="dim"># live job queue</span>
+│   └── origin-push.json
+├── INDEX.md           <span class="dim"># auto-maintained</span>
+└── &lt;topic&gt;/&lt;sub&gt;/&lt;file&gt;.md</code></pre>
+          </article>
+
+          <article class="arch-card">
+            <h3>Concurrency model</h3>
+            <p>HTTP GET handlers read the filesystem directly with no locking. POST handlers acquire the queue mutex only to persist the job and signal the worker. The worker goroutine is the single writer of git — no concurrent git writes are possible by construction.</p>
+          </article>
+
+          <article class="arch-card">
+            <h3>LLM provider interface</h3>
+<pre class="mini"><code><span class="k">type</span> Provider <span class="k">interface</span> {
+  Complete(ctx, system, user, opts…) (string, error)
+  CompleteStructured(ctx, system, user, schema, opts…) (string, error)
+}</code></pre>
+            <p>One method per provider. The only call option today is <code>WithReasoningBudget(n)</code>, forwarded to <code>POST /ask</code> when a non-zero <code>--ask-reasoning-budget</code> is set.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="api" class="section">
+      <div class="container">
+        <h2 class="section-title">HTTP API at a glance</h2>
+        <p class="section-sub">Full reference lives in the <a href="https://github.com/wiztools/knowledged#http-api" target="_blank" rel="noopener">repo README</a> — here is the shape of it.</p>
+
+        <div class="api-grid">
+          <div class="api-row">
+            <div class="api-verb post">POST</div>
+            <code>/content</code>
+            <p>Enqueue a write. Returns <code>202</code> with a <code>job_id</code>.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb put">PUT</div>
+            <code>/content</code>
+            <p>Replace an existing document body, title, or description by path.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb get">GET</div>
+            <code>/content?path=… | query=… | tag=…</code>
+            <p>Read by path, query (raw or synthesized), or tag.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb get">GET</div>
+            <code>/jobs/{id}</code>
+            <p>Poll job status: <code>queued</code> · <code>processing</code> · <code>done</code> · <code>failed</code>.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb get">GET</div>
+            <code>/tags</code>
+            <p>Tag inventory derived from note frontmatter.</p>
+          </div>
+          <div class="api-row">
+            <div class="api-verb post">POST</div>
+            <code>/ask</code>
+            <p>Draft a Markdown answer + suggested tags. Stores nothing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt cta-section">
+      <div class="container cta-wrap">
+        <div>
+          <h2>Run it locally in under a minute.</h2>
+          <p>Pick a provider, point <code>--repo</code> at a folder, and start posting.</p>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/wiztools/knowledged" target="_blank" rel="noopener">knowledged on GitHub ↗</a>
+          <a class="btn" href="https://github.com/wiztools/knowledged-mac" target="_blank" rel="noopener">knowledged-mac on GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>knowledged</strong> · MIT licensed · built in Go &amp; SwiftUI
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/wiztools/knowledged" target="_blank" rel="noopener">knowledged</a>
+        <a href="https://github.com/wiztools/knowledged-mac" target="_blank" rel="noopener">knowledged-mac</a>
+        <a href="https://github.com/wiztools/knowledged/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener">ARCHITECTURE.md</a>
+        <a href="https://github.com/wiztools/knowledged/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
