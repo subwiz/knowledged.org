@@ -210,11 +210,8 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
         <h2 class="section-title">Install</h2>
         <p class="section-sub">Two steps: run the backend, then talk to it from <code>kc</code>, HTTP, or the Mac app.</p>
 
-        <h3 class="step-h">1. Build the server and CLI</h3>
-        <pre class="code"><code><span class="c">git clone</span> https://github.com/wiztools/knowledged.git
-<span class="c">cd</span> knowledged
-<span class="c">go build</span> -o knowledged ./cmd/knowledged
-<span class="c">go build</span> -o kc          ./cmd/kc</code></pre>
+        <h3 class="step-h">1. Install the server and CLI</h3>
+        <pre class="code"><code><span class="c">brew install</span> wiztools/repo/knowledged</code></pre>
 
         <h3 class="step-h">2. Start the server with the LLM provider you have</h3>
         <div class="tabs" role="tablist" aria-label="LLM provider">
