@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="knowledged favicon">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="58" x2="58" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15384A"/>
+      <stop offset=".62" stop-color="#274C55"/>
+      <stop offset="1" stop-color="#E1B94F"/>
+    </linearGradient>
+  </defs>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="13" fill="url(#bg)"/>
+  <path d="M14.5 19.5c6.2-3.2 13.6-2.7 21 1.4v30.3c-7.5.4-14.3-1.1-21-4.6-1.2-11.2-1.2-18.9 0-27.1z" fill="#F7FAF7" stroke="#102034" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M35.5 20.9c7.4-4.1 14.8-4.6 21-1.4 1.2 8.2 1.2 15.9 0 27.1-6.7 3.5-13.5 5-21 4.6z" fill="#FFD36A" stroke="#102034" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M32 20.2v31.2" stroke="#102034" stroke-width="4" stroke-linecap="round"/>
+  <path d="M21 29.7c3.1-1.2 6.6-1.2 10.5.2M21 36.5c3.4-1.7 7.4-2 12-.9M21 43.1c3.3-1.5 7.3-1.8 12-.7" fill="none" stroke="#B9C3CA" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 12.5v3.7M24 16.4l-2.7-2.7M44 16.4l2.7-2.7M48.2 30.2h4.5" fill="none" stroke="#FFF1A8" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M26 52.8h16M28 57h12" fill="none" stroke="#102034" stroke-width="3.5" stroke-linecap="round"/>
+</svg>
