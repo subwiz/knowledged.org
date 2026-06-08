@@ -22,6 +22,7 @@
   <link rel="preload" as="image" href="images/km2.jpg" />
   <link rel="preload" as="image" href="images/km3.jpg" />
   <link rel="preload" as="image" href="images/km4.jpg" />
+  <link rel="preload" as="image" href="images/knowledged-claude.jpg" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -45,6 +46,7 @@
       <nav class="nav" aria-label="Primary">
         <a href="#features">Features</a>
         <a href="#demo">Mac app</a>
+        <a href="#integrations">Integrations</a>
         <a href="#install">Install</a>
         <a href="#architecture">Architecture</a>
         <a href="#api">API</a>
@@ -207,6 +209,33 @@ Goroutines are lightweight, runtime-scheduled threads…</code></pre>
             </li>
           </ol>
         </div>
+      </div>
+    </section>
+
+    <section id="integrations" class="section">
+      <div class="container integration-grid">
+        <div class="integration-copy">
+          <h2 class="section-title">Post from anywhere your work happens.</h2>
+          <p class="section-sub">
+            knowledged is not tied to a single client. Agents and editors can post content through MCP servers,
+            local skills, the CLI, or the HTTP API, so notes can move straight from a live conversation into the same
+            Git-backed knowledge repo.
+          </p>
+          <div class="integration-points">
+            <article>
+              <h3>Claude, Codex, and other agents</h3>
+              <p>Use an MCP integration or a Codex/Claude skill to turn selected answers, research, fixes, and decisions into durable Markdown.</p>
+            </article>
+            <article>
+              <h3>One backend, many surfaces</h3>
+              <p>Every path still lands in the same organizer, queue, and Git commit flow, whether the post starts in chat, a terminal, HTTP, or the Mac app.</p>
+            </article>
+          </div>
+        </div>
+        <figure class="integration-shot">
+          <img src="images/knowledged-claude.jpg" alt="Claude posting a quantization-aware training note to knowledged through an integration" />
+          <figcaption>Claude using a knowledged integration to store a conversation artifact as Markdown.</figcaption>
+        </figure>
       </div>
     </section>
 
